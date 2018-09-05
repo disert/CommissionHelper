@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/def_background">
+
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <View style="@style/line_hor"/>
+    <LinearLayout
+        android:background="@drawable/bg_solid_white"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/tv_home"
+            android:drawableTop="@drawable/home_sy_tab"
+            android:text="首页"
+            style="@style/home_text_tag"/>
+        <TextView
+            android:id="@+id/tv_pt"
+            android:drawableTop="@drawable/home_pt_tab"
+            android:text="搜索"
+            style="@style/home_text_tag"/>
+        <TextView
+            android:id="@+id/tv_find"
+            android:drawableTop="@drawable/home_find_tab"
+            android:text="课堂"
+            style="@style/home_text_tag"/>
+        <TextView
+            android:id="@+id/tv_my"
+            android:drawableTop="@drawable/home_my_tab"
+            android:text="我的"
+            style="@style/home_text_tag"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_home_cate_root"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:background="@drawable/bg_solid_white"
+        android:id="@+id/ll_home_cate"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+    <View style="@style/space_hor_8"/>
+
+</LinearLayout>

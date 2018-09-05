@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/def_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/abl_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_height"
+        android:background="@drawable/bg_solid_white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/top_icon_size"
+            android:layout_height="@dimen/top_icon_size"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/top_left_padding"
+            android:padding="@dimen/top_icon_padding"
+            android:src="@mipmap/icon_back"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_solid_blue"
+                android:hint="请输入商品关键字"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingLeft="40dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/color_999999"
+                android:textSize="14dp"/>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/icon_search"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:background="@drawable/bg_solid_white"
+        android:id="@+id/tl_tag"
+        app:tabIndicatorColor="@color/color_ff5a81"
+        app:tabIndicatorHeight="1dp"
+        app:tabSelectedTextColor="@color/color_ff5a81"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <View style="@style/line_hor"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none"/>
+
+
+</RelativeLayout>

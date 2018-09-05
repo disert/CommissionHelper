@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <View style="@style/space_hor_8"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_solid_white"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_item_img"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/default_img"/>
+
+        <TextView
+            android:id="@+id/tv_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_item_img"
+            android:text="女人,你真的需要“大姨妈”吗?"
+            android:textColor="@color/black"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/tv_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_item_img"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/iv_item_img"
+            android:gravity="center_vertical"
+            android:text="12344"
+            android:textSize="11dp"/>
+
+        <TextView
+            android:id="@+id/tv_item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_item_img"
+            android:layout_alignParentRight="true"
+            android:text="08-06"
+            android:textSize="10dp"/>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

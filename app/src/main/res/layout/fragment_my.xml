@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/def_background"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/sv_my_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_solid_white">
+
+                <com.meishai.commission.helper.view.CircleImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/normal_padding_left"
+                    android:src="@mipmap/default_avatar"/>
+
+                <TextView
+                    android:id="@+id/iv_my_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/iv_avatar"
+                    android:layout_marginLeft="@dimen/normal_padding_left"
+                    android:layout_toRightOf="@+id/iv_avatar"
+                    android:text="name"
+                    android:textColor="@color/color_333333"
+                    android:textSize="13dp"/>
+
+                <TextView
+                    android:id="@+id/tv_my_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_avatar"
+                    android:layout_marginLeft="@dimen/normal_padding_left"
+                    android:layout_toRightOf="@+id/iv_avatar"
+                    android:text="name"
+                    android:textColor="@color/color_999999"
+                    android:textSize="13dp"/>
+
+            </RelativeLayout>
+
+            <View style="@style/space_hor_8"/>
+
+            <LinearLayout
+                android:id="@+id/ll_item_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
