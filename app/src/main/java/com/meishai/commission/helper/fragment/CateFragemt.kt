@@ -8,6 +8,7 @@ import com.meishai.commission.helper.activity.CateActivity.Companion.ORDER_TYPE
 import com.meishai.commission.helper.adapter.CateAdapter
 import com.meishai.commission.helper.base.BaseFragment
 import com.meishai.commission.helper.base.BaseSubscriber
+import com.meishai.commission.helper.bean.resault.ItemBean
 import com.meishai.commission.helper.bean.resault.MallIndexBean
 import com.meishai.commission.helper.bean.resault.MallListBean
 import com.meishai.commission.helper.cons.Constants.PAGE_COUNT
@@ -66,10 +67,12 @@ class CateFragemt : BaseFragment(R.layout.fragment_recycler) {
                 }
             }
         })
+        loadData(mPage)
 
     }
     fun keyChange(key: String){
-
+        mKey = key
+        updateData()
     }
 
 
@@ -87,18 +90,22 @@ class CateFragemt : BaseFragment(R.layout.fragment_recycler) {
         super.setUserVisibleHint(isVisibleToUser)
         if (isVisibleToUser) {
             //这里可能会出现一个bug,就是它的调用 先与oncreateview方法的调用
-            if (type == -1) type = arguments!!.getInt(ORDER_TYPE)
-            if (isFree) {
-                updateData()
-            }
+//            if (type == -1) type = arguments!!.getInt(ORDER_TYPE)
+//            if (isFree) {
+//                updateData()
+//            }
         }
     }
 
-    private var pageCount = PAGE_COUNT
     private fun loadData(page: Int) {
-        //        status	int	是	订单状态，1：待付款，2：待收货，3：待评论
-        //        currentPage	int	是	当前页
-        //        perPage	int	是	每页显数量
+        val list = ArrayList<MallListBean>()
+        for (i in 0..10) {
+            list.add(MallListBean("", "", "", "", ArrayList<ItemBean>()))
+        }
+        mAdapter?.setData(list)
+        isFree = false
+
+
         if (!isFree) return
         isFree = false
         val subscriber = object : BaseSubscriber<MallIndexBean>() {

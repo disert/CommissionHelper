@@ -3,6 +3,7 @@
     <dimen name="normal_padding_left">12dp</dimen>
     <dimen name="normal_padding_right">12dp</dimen>
 
+    <dimen name="bottom_height">45dp</dimen>
     <!--顶部bar的大小数据-->
     <dimen name="top_height">40dp</dimen>
     <dimen name="top_height_double">80dp</dimen>

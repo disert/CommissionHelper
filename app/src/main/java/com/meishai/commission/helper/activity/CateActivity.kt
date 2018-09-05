@@ -13,7 +13,7 @@ import android.widget.TextView
 import com.meishai.commission.helper.R
 import com.meishai.commission.helper.base.BaseActivity
 import com.meishai.commission.helper.fragment.CateFragemt
-import kotlinx.android.synthetic.main.activity_shops.*
+import kotlinx.android.synthetic.main.activity_cate.*
 import java.util.*
 
 
@@ -26,10 +26,10 @@ class CateActivity : BaseActivity() {
 
 
     private val list = ArrayList<CateFragemt>()
-    private var mid: String? = null
+    private var cid: String? = null
     private val titles = arrayListOf("推荐","销量↓","价格↑","佣金↓")
 
-    override val resId: Int  = R.layout.activity_shops
+    override val resId: Int  = R.layout.activity_cate
 
 
     override fun initData(savedInstanceState: Bundle?) {
@@ -54,7 +54,7 @@ class CateActivity : BaseActivity() {
 
     private fun initData() {
 
-        mid = intent.getStringExtra("mid")
+        cid = intent.getStringExtra("cid")
         val title = intent.getStringExtra("title")
         //        mTvTitle.setText(title);
         for (i in 0 until 4){
@@ -69,6 +69,7 @@ class CateActivity : BaseActivity() {
 
         viewpager.adapter = MyAdapter(supportFragmentManager)
         viewpager.offscreenPageLimit = 4
+        tl_tag.setupWithViewPager(viewpager)
         viewpager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
 
             override fun onPageSelected(position: Int) {
@@ -113,11 +114,10 @@ class CateActivity : BaseActivity() {
     companion object {
         const val ORDER_TYPE = "ORDER_TYPE"
 
-        fun newIntent(context: Context, sid: String, title: String): Intent {
+        fun newIntent(context: Context, cid: String): Intent {
 
             val intent = Intent(context, CateActivity::class.java)
-            intent.putExtra("mid", sid)
-            intent.putExtra("title", title)
+            intent.putExtra("cid", cid)
             return intent
         }
     }

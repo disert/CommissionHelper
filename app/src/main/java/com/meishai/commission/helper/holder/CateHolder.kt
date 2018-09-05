@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.LinearLayout
 import com.meishai.commission.helper.R
+import com.meishai.commission.helper.activity.CateActivity
 import com.meishai.commission.helper.utils.AndriodUtils
 import kotlinx.android.synthetic.main.item_home_cate.view.*
 
@@ -29,6 +30,9 @@ class CateHolder(itemView: View, private val mContext: Activity) : RecyclerView.
             for (j in 0 until 5){
                 val view = View.inflate(mContext, R.layout.item_cate,null)
                 linear.addView(view,params)
+                view.setOnClickListener {
+                    mContext.startActivity(CateActivity.newIntent(mContext,""))
+                }
             }
             i += 5
         }

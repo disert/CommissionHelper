@@ -12,13 +12,18 @@
         android:supportsRtl="true"
         android:name=".GlobalContext"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+                  android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.CateActivity"
+                  android:launchMode="singleTop"/>
+        <activity android:name=".activity.GoodsDetailsActivity"
+                  android:launchMode="singleTop"/>
     </application>
 
 </manifest>

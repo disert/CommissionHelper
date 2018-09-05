@@ -49,6 +49,34 @@ import java.util.regex.Pattern
 object AndriodUtils {
 
 
+    /**
+     * 获取imageview在屏幕中的实际的宽度和高度
+     *
+     * @param lineCount    一行要显示几个view
+     * @param rightPadding view离右边一个view的距离,view的父类应该自己设置一个左边距
+     * @param imageWidth   图片的真实宽度
+     * @param imageHeight  图片的真实高度
+     * @return
+     */
+    fun getViewRealWH(lineCount: Int, rightPadding: Int, imageWidth: Double, imageHeight: Double): Point {
+        //获得屏幕宽度
+        val dm = GlobalContext.context!!.resources.displayMetrics
+        val screenWidth = dm.widthPixels.toDouble()
+        //计算view在屏幕中的宽度
+        val viewWidht = (screenWidth - rightPadding * (lineCount + 1)) / lineCount
+        //计算图片高度与宽度的比例
+        val ratio = imageWidth / imageHeight
+        //计算view在屏幕中的高度
+        val viewHeight = viewWidht / ratio
+
+        //        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams((int)(viewWidht+rightPadding),(int)viewHeight);
+        //        imageView.setLayoutParams(layoutParams);
+        //        imageView.setPadding(0,0,rightPadding,0);
+        val point = Point()
+        point.x = viewWidht.toInt()
+        point.y = viewHeight.toInt()
+        return point
+    }
     fun <T : Any> ctlData(res: MutableList<T>?, temp: MutableList<T>?, page: Int): MutableList<T>? {
 
         if (page == 1) {

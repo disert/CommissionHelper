@@ -3,6 +3,7 @@ package com.meishai.commission.helper.holder
 import android.app.Activity
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.meishai.commission.helper.activity.GoodsDetailsActivity
 import com.meishai.commission.helper.bean.resault.MallListBean
 import kotlinx.android.synthetic.main.item_home.view.*
 
@@ -26,6 +27,9 @@ class GoodsHolder(view: View) : RecyclerView.ViewHolder(view) {
     fun init(mContext: Activity, bean: MallListBean?) {
         if (bean == null) return
 
+        itemView.setOnClickListener {
+            mContext.startActivity(GoodsDetailsActivity.newIntent(mContext,""))
+        }
 
     }
 
