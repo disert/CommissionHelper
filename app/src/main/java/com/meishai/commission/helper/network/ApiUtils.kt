@@ -1,15 +1,21 @@
 package com.meishai.commission.helper.network
 
 import android.accounts.NetworkErrorException
+import android.text.TextUtils
+import android.widget.TextView
 import com.meishai.commission.helper.GlobalContext
+import com.meishai.commission.helper.R
 import com.meishai.commission.helper.base.BaseSubscriber
 import com.meishai.commission.helper.bean.ResaultBean
+import com.meishai.commission.helper.cons.Constants.REGEX_MOBILE
 import com.meishai.commission.helper.utils.AndriodUtils
+import com.meishai.commission.helper.utils.EncodingUtils
 import com.meishai.commission.helper.utils.ToastManager
 import rx.Observable
 import rx.Subscriber
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
+import java.util.regex.Pattern
 
 /**
  * 作者 Administrator
@@ -46,6 +52,28 @@ object ApiUtils {
         if (subscriber is BaseSubscriber<*>)
             subscriber.setSubscription(subscribe)
 
+    }
+
+    /**
+     * 公共接口 发送短信验证码
+     *
+     * @param phone
+     * @param type
+     * @param subscriber
+     */
+    fun sendSms(phone: TextView, type: Int, subscriber: Subscriber<String>) {
+        //检测手机号
+        val trim = phone.text.toString().trim { it <= ' ' }
+        if (TextUtils.isEmpty(trim)) {
+            ToastManager.showShort(GlobalContext.context!!, R.string.hint_input_phone)
+            return
+        }
+        if (!Pattern.matches(REGEX_MOBILE, trim)) {
+            ToastManager.showShort(GlobalContext.context!!, R.string.hint_input_valid_phone)
+            return
+        }
+        val data = EncodingUtils.initInstance().put("phone", trim).put("type", type).getBase64()
+        ApiUtils.request(ApiUtils.getApiInterface()!!.smsCode(data), subscriber)
     }
 
 }

@@ -6,7 +6,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_solid_white"
     android:orientation="vertical">
-
+    <TextView
+        android:text="课堂"
+        android:textSize="16dp"
+        android:textColor="@color/color_333333"
+        android:gravity="center"
+        android:background="@drawable/bg_solid_white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_height"/>
+    <View style="@style/line_hor"/>
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/srl_refresh"
         android:layout_width="match_parent"

@@ -7,24 +7,62 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:id="@+id/abl_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_height"
+        android:layout_weight="1"
+        android:background="@drawable/bg_solid_white"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_solid_blue"
+            android:hint="请输入商品关键字"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/color_999999"
+            android:textSize="14dp"/>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/icon_search"/>
+        <View style="@style/line_hor" android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
-    android:id="@+id/rv_recycview"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+        android:id="@+id/rv_recycview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/abl_top">
 
     </android.support.v7.widget.RecyclerView>
 
     <ImageView
         android:id="@+id/iv_back_top"
-        android:layout_marginBottom="5dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/circ_white"
-        android:src="@mipmap/icon_uptop"
+        android:layout_marginBottom="5dp"
         android:layout_marginRight="5dp"
+        android:background="@drawable/circ_white"
         android:padding="9dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"/>
+        android:src="@mipmap/icon_uptop"/>
 
 </RelativeLayout>

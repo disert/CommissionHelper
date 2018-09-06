@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">高佣助手</string>
+
+    <string name="hint_input_phone">请输入手机号码</string>
+    <string name="hint_input_valid_phone">请输入有效的手机号码</string>
+    <string name="hint_input_msg_code">请输入验证码</string>
+    <string name="toast_send_msg_success">信息发送成功!</string>
 </resources>

@@ -47,6 +47,8 @@ object Constants {
     const val PATH_MALL_INDEX = "home/index"
     const val PATH_SHARE = "user/appshare"
     const val PATH_UPDATE_IMG = "upload/showimage"
+    //接口路径: 获取短信验证码路径
+    const val PATH_SMSCODE = "user/smscode"
 
     //网络返回数据的统一参数
     const val NETWORK_CODE = "code"

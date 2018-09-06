@@ -24,6 +24,16 @@
                   android:launchMode="singleTop"/>
         <activity android:name=".activity.GoodsDetailsActivity"
                   android:launchMode="singleTop"/>
+        <activity android:name=".activity.PIDSetActivity"
+                  android:launchMode="singleTop"/>
+        <activity android:name=".activity.AuthorActivity"
+                  android:launchMode="singleTop"/>
+        <activity android:name=".activity.BuyVipActivity"
+                  android:launchMode="singleTop"/>
+        <activity android:name=".activity.SetPhoneActivity"
+                  android:launchMode="singleTop"/>
+        <activity android:name=".activity.HelpListActivity"
+                  android:launchMode="singleTop"/>
     </application>
 
 </manifest>

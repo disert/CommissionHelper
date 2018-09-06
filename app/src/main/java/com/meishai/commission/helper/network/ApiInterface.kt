@@ -8,6 +8,7 @@ import com.meishai.commission.helper.bean.resault.MallIndexBean
 import com.meishai.commission.helper.cons.Constants.PATH_ARTICLE_LIST
 import com.meishai.commission.helper.cons.Constants.PATH_MALL_INDEX
 import com.meishai.commission.helper.cons.Constants.PATH_SHARE
+import com.meishai.commission.helper.cons.Constants.PATH_SMSCODE
 import com.meishai.commission.helper.cons.Constants.PATH_TAOBAO_TEL_SEGMENT
 import com.meishai.commission.helper.cons.Constants.PATH_UPDATE_IMG
 import com.meishai.commission.helper.cons.Constants.PATH_WECHAT_USER_INFO
@@ -104,4 +105,13 @@ interface ApiInterface {
 
     @GET(PATH_MALL_INDEX)
     fun mallIndex(@Query(DATA)data: String): Observable<ResaultBean<MallIndexBean>>
+
+    /**
+     * 获取短信验证码
+     * @param data
+     * @return
+     */
+    @FormUrlEncoded
+    @POST(PATH_SMSCODE)
+    fun smsCode(@Field(DATA) data: String): Observable<ResaultBean<String>>
 }

@@ -8,10 +8,10 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
-import com.umeng.analytics.MobclickAgent
 import com.meishai.commission.helper.R
 import com.meishai.commission.helper.utils.AppManager
 import com.meishai.commission.helper.utils.SystemBarTintManager
+import com.umeng.analytics.MobclickAgent
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.functions.Action1
@@ -50,7 +50,7 @@ abstract class BaseActivity : AppCompatActivity() {
             setContentView(layoutResID)
         }
         if (SystemBarTintManager.StatusBarLightMode(mContext) != 0) {
-            SystemBarTintManager.setStatusBarColor(mContext, R.color.white)
+            SystemBarTintManager.setStatusBarColor(mContext, R.color.colorPrimaryDark)
         } else {
             SystemBarTintManager.setStatusBarColor(mContext, R.color.black)
         }

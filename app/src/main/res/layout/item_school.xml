@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_toRightOf="@+id/iv_item_img"
-            android:text="女人,你真的需要“大姨妈”吗?"
+            android:text="asdfasdfsdfdsfdf?"
             android:textColor="@color/black"
             android:textSize="14dp"/>
 
